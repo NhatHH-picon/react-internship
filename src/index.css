@@ -98,19 +98,32 @@ body {
   color: #ccc;
   height: 40px;
 }
-.footer > div {
-  flex: 1 1 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-.footer svg {
+
+.card-footer svg {
   width: 24px;
   height: 24px;
   margin-right: 4px;
   display: inline-block;
   vertical-align: middle;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; 
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: -8px;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  color: #a0a0a0; 
+  cursor: pointer;
+  font-size: 14px;
 }
 .absolute {
     position: absolute;
@@ -118,3 +131,49 @@ body {
 .h-full {
     height: 100%;
 }
+.upvote {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.upvote:hover {
+  color: rgb(150, 213, 94);
+}
+
+.upvote.active {
+  color: rgb(150, 213, 94);
+}
+
+/* Footer icon hover colors */
+:root {
+  --footer-upvote: rgb(150, 213, 94);
+  --footer-downvote: #ff3333;
+  --footer-comment: #2196f3;
+  --footer-bookmark: #ff9800;
+  --footer-sharelink: #ffd600;
+}
+
+.upvote:hover, .upvote.active {
+  color: var(--footer-upvote);
+}
+
+.downvote:hover svg {
+  fill: var(--footer-downvote) !important;
+}
+
+.comment-footer:hover svg {
+  fill: var(--footer-comment) !important;
+}
+
+.bookmark-footer:hover svg {
+  fill: var(--footer-bookmark) !important;
+}
+
+.sharelink-footer:hover svg {
+  fill: var(--footer-sharelink) !important;
+}
+
+
